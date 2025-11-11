@@ -735,10 +735,7 @@ furnished to do so, subject to the following conditions:
 **ind4skylivey**  
 Security Researcher & Laravel Developer
 
-- 🌐 Website: [ind4skylivey.dev](https://ind4skylivey.dev)
 - 🐙 GitHub: [@ind4skylivey](https://github.com/ind4skylivey)
-- 🐦 Twitter: [@ind4skylivey](https://twitter.com/ind4skylivey)
-- 📧 Email: contact@ind4skylivey.dev
 
 ### Inspiration & Resources
 
