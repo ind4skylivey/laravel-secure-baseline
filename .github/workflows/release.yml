@@ -1,0 +1,69 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-test-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, openssl
+          tools: composer
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Run test suite
+        run: composer test
+
+      - name: Generate SARIF report
+        run: php artisan secure:scan --format=sarif --fail-on=none > secure-baseline.sarif
+
+      - name: Upload SARIF to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: secure-baseline.sarif
+
+      - name: Generate release reports
+        run: |
+          php artisan secure:report --format=md --output=secure-baseline.md
+          php artisan secure:report --format=html --output=secure-baseline.html
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: secure-baseline-release-artifacts
+          path: |
+            secure-baseline.sarif
+            secure-baseline.md
+            secure-baseline.html
+
+      - name: Notify Packagist
+        if: ${{ secrets.PACKAGIST_USERNAME && secrets.PACKAGIST_API_TOKEN }}
+        run: >-
+          curl -sSf -X POST
+          "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}"
+          -H "Content-Type: application/json"
+          -d '{"repository":{"url":"https://github.com/ind4skylivey/laravel-secure-baseline"}}'
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            secure-baseline.md
+            secure-baseline.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

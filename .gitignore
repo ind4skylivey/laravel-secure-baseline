@@ -1,0 +1,30 @@
+# --- Composer / PHP ---
+/vendor/
+/vendor-bin/
+/.phpunit.result.cache
+/.phpunit.cache/
+/.pest.cache
+/.pint.cache
+/.php-cs-fixer.cache
+
+# --- Framework & tooling caches ---
+/storage/
+/.env
+/.env.*
+.env.local
+.env.testing
+/coverage/
+/build/
+secure-baseline*.sarif
+secure-baseline*.md
+secure-baseline*.html
+
+# --- Editors & OS noise ---
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+node_modules/
+
+# --- Misc ---
+*.log

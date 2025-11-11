@@ -1,0 +1,60 @@
+{
+    "name": "ind4skylivey/laravel-secure-baseline",
+    "description": "Laravel Secure Baseline – Automated security checks for your Laravel app.",
+    "keywords": [
+        "laravel",
+        "security",
+        "baseline",
+        "audit",
+        "compliance"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/ind4skylivey/laravel-secure-baseline",
+    "support": {
+        "issues": "https://github.com/ind4skylivey/laravel-secure-baseline/issues",
+        "source": "https://github.com/ind4skylivey/laravel-secure-baseline"
+    },
+    "authors": [
+        {
+            "name": "ind4skylivey"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^2.8",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ind4skylivey\\LaravelSecureBaseline\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ind4skylivey\\LaravelSecureBaseline\\Tests\\": "tests/",
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ind4skylivey\\LaravelSecureBaseline\\SecureBaselineServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
