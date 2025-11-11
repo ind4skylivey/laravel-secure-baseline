@@ -67,3 +67,18 @@ it('flags telescope route without auth middleware', function () {
 
     expect($findings)->toContainFinding('fail', '/telescope route detected');
 });
+
+it('detects protected routes even when middleware uses different casing', function () {
+    Route::middleware(\Illuminate\Auth\Middleware\Authenticate::class)
+        ->get('/admin-panel', fn () => 'ok');
+
+    $this->setAppEnvironment('production');
+
+    $findings = $this->runScanner(RoutesScanner::class, [
+        'routes' => [
+            'sensitive_paths' => ['/admin-panel'],
+        ],
+    ]);
+
+    expect($findings)->toContainFinding('pass', 'Protected by middleware');
+});

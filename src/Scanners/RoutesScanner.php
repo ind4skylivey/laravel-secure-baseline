@@ -80,8 +80,10 @@ class RoutesScanner extends AbstractScanner
         $indicators = $this->config('routes.protected_middleware_indicators', []);
 
         foreach ($middleware as $layer) {
+            $normalizedLayer = Str::lower((string) $layer);
+
             foreach ($indicators as $indicator) {
-                if (Str::contains($layer, $indicator)) {
+                if (Str::contains($normalizedLayer, Str::lower($indicator))) {
                     return true;
                 }
             }
