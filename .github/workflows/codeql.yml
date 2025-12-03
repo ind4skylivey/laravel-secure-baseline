@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ] # CodeQL no soporta PHP; se analiza JS/Node build files
+        language: [ 'javascript' ] # CodeQL no soporta PHP; JS chosen to keep CodeQL signal alive
 
     steps:
       - name: Checkout repository
@@ -30,6 +30,7 @@ jobs:
         uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
+          build-mode: none  # no autobuild needed for JS when no node project present
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
