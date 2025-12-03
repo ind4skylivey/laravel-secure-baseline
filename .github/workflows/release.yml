@@ -33,7 +33,7 @@ jobs:
         run: php artisan secure:scan --format=sarif --fail-on=none > secure-baseline.sarif
 
       - name: Upload SARIF to GitHub Security
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: secure-baseline.sarif
 
