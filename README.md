@@ -750,7 +750,7 @@ Please **DO NOT** open a public GitHub issue. Responsible disclosure protects al
 
 ## 📜 License
 
-Laravel Secure Baseline is provided under the **Business Source License 1.1 (BSL 1.1)** with a Change Date of **2029-01-01**, after which the Change License is **GPL-3.0-or-later**. Commercial or production use before the Change Date requires a commercial license from the author (ind4skylivey). See [LICENSE](LICENSE) for full terms. Releases up to and including v0.1.0 were published under MIT.
+All versions of Laravel Secure Baseline are provided under the **Business Source License 1.1 (BSL 1.1)** with a Change Date of **2029-01-01**, after which the Change License is **GPL-3.0-or-later**. Commercial or production use before the Change Date requires a commercial license from the author (ind4skylivey). See [LICENSE](LICENSE) for full terms.
 
 ---
 
