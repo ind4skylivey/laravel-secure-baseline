@@ -9,13 +9,15 @@
 ╚═══════════════════════════════════════════════════════════╝
 ```
 
+# Laravel Secure Baseline 🛡️ — Automated Laravel security scanner
 ### **Automated Laravel Security Scanner — Catch Misconfigurations Before Production**
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php&logoColor=white&style=for-the-badge)](https://php.net)
 [![Laravel](https://img.shields.io/badge/Laravel-10%20%7C%2011-FF2D20?logo=laravel&logoColor=white&style=for-the-badge)](https://laravel.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg?style=for-the-badge)](https://github.com/ind4skylivey/laravel-secure-baseline)
-[![Packagist](https://img.shields.io/badge/packagist-ready-orange.svg?style=for-the-badge)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline)
+[![Packagist Version](https://img.shields.io/packagist/v/ind4skylivey/laravel-secure-baseline?label=Packagist&logo=packagist&style=for-the-badge)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline)
+[![Packagist Downloads](https://img.shields.io/packagist/dm/ind4skylivey/laravel-secure-baseline?color=blue&logo=laravel&style=for-the-badge)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline/stats)
 
 **Run one Artisan command. Get instant Laravel security audit. Deploy with confidence.**
 
@@ -23,7 +25,7 @@
 php artisan secure:scan
 ```
 
-[🚀 Quick Start](#-quick-start-secure-your-laravel-app-in-60-seconds) • [📋 Features](#-features) • [🔍 What It Checks](#-what-laravel-secure-baseline-checks) • [⚙️ Configuration](#-configuration) • [🔄 CI/CD Integration](#-cicd-integration) • [📚 Docs](#-documentation)
+[🚀 Quick Start](#-quick-start-secure-your-laravel-app-in-60-seconds) • [📋 Features](#-features) • [🔍 What It Checks](#-laravel-security-checks-covered-what-laravel-secure-baseline-checks) • [⚙️ Configuration](#-configuration) • [🔄 CI/CD Integration](#-laravel-cicd-integration) • [📚 Docs](#-documentation)
 
 ---
 
@@ -46,6 +48,14 @@ Manual Laravel security checklists are time-consuming, error-prone, and often sk
 **Laravel Secure Baseline** is a zero-configuration Laravel security audit tool that scans your application in seconds and produces actionable security findings. Run one Artisan command to validate environment configuration, session security, CORS policies, security headers, debug route exposure, and dependency versions against Laravel security best practices.
 
 No complex setup. No security expertise required. Just install the package, run `php artisan secure:scan`, and get a color-coded Laravel security report with **pass (✅)**, **warning (⚠️)**, and **fail (❌)** statuses. Export results as JSON, Markdown, HTML, or SARIF for GitHub Security integration. Perfect for local development, staging validation, and production deployment gates.
+
+## 🙌 Why Laravel Developers Use This Scanner
+
+- **Laravel security scanner built for CI** — Add Laravel CI security checks to every pull request so misconfigurations never reach production.
+- **Secure Laravel deployments in minutes** — Enforce a repeatable Laravel security baseline before shipping.
+- **Actionable Laravel vulnerability detection** — Human-readable remediation steps tuned for Laravel 10/11.
+- **Fits real-world pipelines** — Works with GitHub Actions, GitLab CI, Jenkins, and self-hosted runners.
+- **Production hardening by default** — Highlights risky debug routes, weak cookies, missing HTTPS headers, and outdated dependencies.
 
 ---
 
@@ -77,6 +87,17 @@ No complex setup. No security expertise required. Just install the package, run 
 </td>
 </tr>
 </table>
+
+## 🆚 Laravel Security Scanner Comparison (Enlightn vs Manual Audits)
+
+| Capability | Laravel Secure Baseline | Enlightn | Manual Laravel security audits |
+|------------|-------------------------|----------|--------------------------------|
+| **Setup time** | 60 seconds (`composer require` + `php artisan secure:scan`) | Requires configuration & subscription | Hours of checklist prep |
+| **Focus** | Misconfiguration & production hardening for Laravel CI security checks | Code-level insights & performance | Depends on reviewer expertise |
+| **CI/CD ready** | Yes — zero-config, JSON/SARIF outputs | Paid tiers for CI | Inconsistent, people-dependent |
+| **Laravel production hardening** | Built-in checks for debug routes, headers, sessions, CORS | Limited environment checks | Easy to miss under time pressure |
+| **Cost** | Open-source MIT | Commercial | Human-hours |
+| **Speed** | < 5 seconds per run | Longer on large apps | Manual review time |
 
 ---
 
@@ -268,6 +289,15 @@ Add `Strict-Transport-Security: max-age=31536000; includeSubDomains` header via 
 
 ---
 
+## ✅ Production Deployment Checklist for Secure Laravel Deployments
+
+- Run `php artisan secure:scan --fail-on=fail` before every release to enforce the Laravel security baseline.
+- Review CORS, session, and header findings to harden HTTPS and cookie handling for production.
+- Export SARIF or HTML reports for audit trails and attach them to deployment artifacts.
+- Enable Laravel CI security checks in your pipeline (GitHub Actions example below) to block risky builds automatically.
+- Confirm `APP_DEBUG=false`, strong `APP_KEY`, and restrictive `SESSION_SECURE_COOKIE` prior to tag creation.
+- Rerun after infrastructure changes (load balancers, CDN) to validate security headers and HTTPS redirects.
+
 ## ⚙️ Configuration
 
 ### Publishing Configuration
@@ -361,13 +391,12 @@ Then register in `config/secure-baseline.php`:
 ],
 ```
 
----
 
-## 🔄 CI/CD Integration
+## 🔄 Laravel CI/CD Integration
 
-Integrate Laravel Secure Baseline into your deployment pipeline to **block insecure releases automatically**.
+Integrate Laravel Secure Baseline into your deployment pipeline to **block insecure releases automatically**. The workflow below adds Laravel CI security checks for continuous Laravel vulnerability detection and secure Laravel deployments.
 
-### GitHub Actions (Recommended)
+### GitHub Actions: Secure Laravel deployments (Recommended)
 
 Add to `.github/workflows/security-scan.yml`:
 
@@ -531,7 +560,7 @@ chmod +x scripts/security-check.sh
 
 ---
 
-## 🔍 What Laravel Secure Baseline Checks
+## 🔍 Laravel Security Checks Covered (What Laravel Secure Baseline Checks)
 
 ### ⚙️ Configuration Security
 
@@ -607,7 +636,7 @@ chmod +x scripts/security-check.sh
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ Roadmap & Future Enhancements
 
 We're actively developing new Laravel security audit features:
 
