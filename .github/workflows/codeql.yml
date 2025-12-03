@@ -16,6 +16,7 @@ jobs:
       actions: read
       contents: read
       security-events: write
+    if: ${{ hashFiles('**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx') != '' }}
 
     strategy:
       fail-fast: false
