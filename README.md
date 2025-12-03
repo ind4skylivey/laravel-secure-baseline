@@ -18,7 +18,7 @@
 php artisan secure:scan
 ```
 
-[🚀 Quick Start](#-quick-start-secure-your-laravel-app-in-60-seconds) • [📋 Features](#-features) • [🔍 What It Checks](#-laravel-security-checks-covered-what-laravel-secure-baseline-checks) • [⚙️ Configuration](#-configuration) • [🔄 CI/CD Integration](#-laravel-cicd-integration) • [📚 Docs](#-documentation)
+[🚀 Quick Start](#-quick-start-secure-your-laravel-app-in-60-seconds) • [📋 Features](#-features) • [🔍 What It Checks](#-laravel-security-checks-covered-what-laravel-secure-baseline-checks) • [⚙️ Configuration](#configuration) • [🔄 CI/CD Integration](#-laravel-cicd-integration) • [📚 Docs](#-documentation)
 
 ---
 
@@ -290,6 +290,8 @@ Add `Strict-Transport-Security: max-age=31536000; includeSubDomains` header via 
 - Enable Laravel CI security checks in your pipeline (GitHub Actions example below) to block risky builds automatically.
 - Confirm `APP_DEBUG=false`, strong `APP_KEY`, and restrictive `SESSION_SECURE_COOKIE` prior to tag creation.
 - Rerun after infrastructure changes (load balancers, CDN) to validate security headers and HTTPS redirects.
+
+<a id="configuration"></a>
 
 ## ⚙️ Configuration
 
