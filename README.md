@@ -7,6 +7,9 @@
 
 ![Secure scan demo](assets/secure-scan-demo.gif)
 
+[<img src="assets/cli-demo.png" alt="CLI output" width="650">](assets/cli-demo.png)
+[<img src="assets/report-demo.png" alt="HTML report preview" width="650">](assets/report-demo.png)
+
 [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php&logoColor=white&style=for-the-badge)](https://php.net)
 [![Laravel](https://img.shields.io/badge/Laravel-10%20%7C%2011-FF2D20?logo=laravel&logoColor=white&style=for-the-badge)](https://laravel.com)
 [![License: BSL 1.1](https://img.shields.io/badge/License-BSL--1.1-blue.svg?style=for-the-badge)](LICENSE)
