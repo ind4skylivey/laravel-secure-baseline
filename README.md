@@ -293,7 +293,7 @@ Add `Strict-Transport-Security: max-age=31536000; includeSubDomains` header via 
 
 <a id="configuration"></a>
 
-## ⚙️ Configuration
+## Configuration
 
 ### Publishing Configuration
 
