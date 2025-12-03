@@ -680,7 +680,7 @@ Please **DO NOT** open a public GitHub issue. Responsible disclosure protects al
 
 ### Reporting Process
 
-**Email:** security@ind4skylivey.dev (PGP key available on request)
+**Email:** livey_sh13lds1b33@keemail.me (PGP key available on request)
 
 **Include:**
 - Description of the vulnerability
@@ -776,8 +776,6 @@ php artisan secure:scan
 <br>
 
 [![Star on GitHub](https://img.shields.io/github/stars/ind4skylivey/laravel-secure-baseline?style=social)](https://github.com/ind4skylivey/laravel-secure-baseline)
-[![Follow on Twitter](https://img.shields.io/twitter/follow/ind4skylivey?style=social)](https://twitter.com/ind4skylivey)
-
 <br>
 
 **Made with ❤️ for the Laravel security community**
