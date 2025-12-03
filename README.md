@@ -788,6 +788,7 @@ Security Researcher & Laravel Developer
 - 🔄 [CI/CD Integration Guide](docs/integrating-secure-baseline-into-ci-cd.md) — Advanced pipeline configurations
 - 📦 [Publishing to Packagist](docs/publishing-to-packagist.md) — For maintainers
 - 🔌 [Creating Custom Scanners](docs/custom-scanners.md) — Extend with your own checks
+- 🗓️ [Changelog](CHANGELOG.md) — Release history
 
 ---
 
