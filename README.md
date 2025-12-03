@@ -7,7 +7,7 @@
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php&logoColor=white&style=for-the-badge)](https://php.net)
 [![Laravel](https://img.shields.io/badge/Laravel-10%20%7C%2011-FF2D20?logo=laravel&logoColor=white&style=for-the-badge)](https://laravel.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![License: BSL 1.1](https://img.shields.io/badge/License-BSL--1.1-blue.svg?style=for-the-badge)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg?style=for-the-badge)](https://github.com/ind4skylivey/laravel-secure-baseline)
 [![Packagist Version](https://img.shields.io/packagist/v/ind4skylivey/laravel-secure-baseline?label=Packagist&logo=packagist&style=for-the-badge)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/ind4skylivey/laravel-secure-baseline?logo=packagist&style=for-the-badge&label=Downloads&color=blue&cacheSeconds=3600)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline/stats)
@@ -750,24 +750,7 @@ Please **DO NOT** open a public GitHub issue. Responsible disclosure protects al
 
 ## 📜 License
 
-Laravel Secure Baseline is open-source software licensed under the **[MIT License](LICENSE)**.
-
-```text
-MIT License
-
-Copyright (c) 2025 ind4skylivey
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-[Full license text in LICENSE file]
-```
-
-**Why MIT?** Maximum adoption, zero legal friction. Use freely in commercial projects.
+Laravel Secure Baseline is provided under the **Business Source License 1.1 (BSL 1.1)** with a Change Date of **2029-01-01**, after which the Change License is **GPL-3.0-or-later**. Commercial or production use before the Change Date requires a commercial license from the author (ind4skylivey). See [LICENSE](LICENSE) for full terms. Releases up to and including v0.1.0 were published under MIT.
 
 ---
 

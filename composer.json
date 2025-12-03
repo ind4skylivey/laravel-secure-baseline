@@ -9,7 +9,7 @@
         "compliance"
     ],
     "type": "library",
-    "license": "MIT",
+    "license": "BSL-1.1",
     "homepage": "https://github.com/ind4skylivey/laravel-secure-baseline",
     "support": {
         "issues": "https://github.com/ind4skylivey/laravel-secure-baseline/issues",
