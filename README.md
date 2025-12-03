@@ -1,13 +1,6 @@
 <div align="center">
 
-```ascii
-╔═══════════════════════════════════════════════════════════╗
-║                                                           ║
-║      🛡️  LARAVEL SECURE BASELINE                         ║
-║      Automated Security Audit for Laravel Apps           ║
-║                                                           ║
-╚═══════════════════════════════════════════════════════════╝
-```
+<img width="1536" height="1024" alt="32334" src="https://github.com/user-attachments/assets/d7962e30-936c-4591-a19d-b954979193fb" />
 
 # Laravel Secure Baseline 🛡️ — Automated Laravel security scanner
 ### **Automated Laravel Security Scanner — Catch Misconfigurations Before Production**
