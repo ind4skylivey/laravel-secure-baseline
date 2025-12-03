@@ -49,11 +49,13 @@ Manual Laravel security checklists are time-consuming, error-prone, and often sk
 
 No complex setup. No security expertise required. Just install the package, run `php artisan secure:scan`, and get a color-coded Laravel security report with **pass (✅)**, **warning (⚠️)**, and **fail (❌)** statuses. Export results as JSON, Markdown, HTML, or SARIF for GitHub Security integration. Perfect for local development, staging validation, and production deployment gates.
 
-## 🙌 Why Laravel Teams Use This
+## 🙌 Why Laravel Developers Use This Scanner
 
-- Blocks deploys when `APP_DEBUG=true` in CI.
-- Enforces secure cookies and security headers by default.
-- No telemetry; runs entirely inside your pipeline.
+- Built for CI: Add security checks to every pull request so misconfigurations never reach production.
+- Secure deploys: Enforce a repeatable security baseline before each release.
+- Actionable findings: Provide remediation steps tuned for Laravel 10/11.
+- Fits real pipelines: Works with GitHub Actions, GitLab CI, Jenkins, and self-hosted runners.
+- Production-ready: Flags debug routes, weak cookies, missing HTTPS headers, and outdated dependencies.
 
 ---
 
