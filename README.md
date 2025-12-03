@@ -17,7 +17,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg?style=for-the-badge)](https://github.com/ind4skylivey/laravel-secure-baseline)
 [![Packagist Version](https://img.shields.io/packagist/v/ind4skylivey/laravel-secure-baseline?label=Packagist&logo=packagist&style=for-the-badge)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline)
-[![Packagist Downloads](https://img.shields.io/packagist/dm/ind4skylivey/laravel-secure-baseline?color=blue&logo=laravel&style=for-the-badge)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline/stats)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/ind4skylivey/laravel-secure-baseline?logo=packagist&style=for-the-badge&label=Downloads&color=blue&cacheSeconds=3600)](https://packagist.org/packages/ind4skylivey/laravel-secure-baseline/stats)
 
 **Run one Artisan command. Get instant Laravel security audit. Deploy with confidence.**
 
