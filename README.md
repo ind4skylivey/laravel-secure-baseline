@@ -49,13 +49,11 @@ Manual Laravel security checklists are time-consuming, error-prone, and often sk
 
 No complex setup. No security expertise required. Just install the package, run `php artisan secure:scan`, and get a color-coded Laravel security report with **pass (✅)**, **warning (⚠️)**, and **fail (❌)** statuses. Export results as JSON, Markdown, HTML, or SARIF for GitHub Security integration. Perfect for local development, staging validation, and production deployment gates.
 
-## 🙌 Why Laravel Developers Use This Scanner
+## 🙌 Why Laravel Teams Use This
 
-- **Laravel security scanner built for CI** — Add Laravel CI security checks to every pull request so misconfigurations never reach production.
-- **Secure Laravel deployments in minutes** — Enforce a repeatable Laravel security baseline before shipping.
-- **Actionable Laravel vulnerability detection** — Human-readable remediation steps tuned for Laravel 10/11.
-- **Fits real-world pipelines** — Works with GitHub Actions, GitLab CI, Jenkins, and self-hosted runners.
-- **Production hardening by default** — Highlights risky debug routes, weak cookies, missing HTTPS headers, and outdated dependencies.
+- Blocks deploys when `APP_DEBUG=true` in CI.
+- Enforces secure cookies and security headers by default.
+- No telemetry; runs entirely inside your pipeline.
 
 ---
 
@@ -88,16 +86,16 @@ No complex setup. No security expertise required. Just install the package, run 
 </tr>
 </table>
 
-## 🆚 Laravel Security Scanner Comparison (Enlightn vs Manual Audits)
+## 🆚 Laravel Security Scanner Comparison
 
-| Capability | Laravel Secure Baseline | Enlightn | Manual Laravel security audits |
-|------------|-------------------------|----------|--------------------------------|
-| **Setup time** | 60 seconds (`composer require` + `php artisan secure:scan`) | Requires configuration & subscription | Hours of checklist prep |
-| **Focus** | Misconfiguration & production hardening for Laravel CI security checks | Code-level insights & performance | Depends on reviewer expertise |
-| **CI/CD ready** | Yes — zero-config, JSON/SARIF outputs | Paid tiers for CI | Inconsistent, people-dependent |
-| **Laravel production hardening** | Built-in checks for debug routes, headers, sessions, CORS | Limited environment checks | Easy to miss under time pressure |
-| **Cost** | Open-source MIT | Commercial | Human-hours |
-| **Speed** | < 5 seconds per run | Longer on large apps | Manual review time |
+| Capability | Laravel Secure Baseline | Enlightn (free) | No scanner |
+|------------|-------------------------|-----------------|------------|
+| Setup time | 60 seconds (`composer require` + `php artisan secure:scan`) | Requires config + account | N/A |
+| CI enforcement | Fails pipeline via `--fail-on` | Limited in free tier | None |
+| Focus | Env/config hardening for production | Code insights/performance | Hope-and-pray |
+| Config checks (APP_DEBUG/APP_KEY/headers) | ✔️ | Partial | ❌ |
+| Telemetry | None (runs in your CI) | SaaS telemetry | N/A |
+| Output formats | CLI, JSON, MD, HTML, SARIF | Dashboard + CLI | None |
 
 ---
 
@@ -463,6 +461,25 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: secure-baseline.sarif
+```
+
+#### Minimal GitHub Actions snippet (just fail on issues)
+
+```yaml
+name: security
+on: [push, pull_request]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, openssl
+      - run: composer install --prefer-dist --no-progress --no-interaction
+      - run: php artisan secure:scan --fail-on=fail
 ```
 
 ### GitLab CI
