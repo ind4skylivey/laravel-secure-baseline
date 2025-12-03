@@ -1,0 +1,48 @@
+name: Laravel Secure Baseline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: [ '8.2' ] # extend to ['8.2', '8.3'] if desired
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+          tools: composer:v2
+          extensions: mbstring, openssl
+
+      - name: Cache Composer
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ matrix.php-version }}-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Prepare minimal environment
+        run: |
+          cp .env.example .env 2>/dev/null || true
+          if ! grep -q '^APP_KEY=' .env; then
+            php artisan key:generate --quiet
+          fi
+
+      - name: Run security scan
+        run: php artisan secure:scan --fail-on=fail --error-exit-code=1
