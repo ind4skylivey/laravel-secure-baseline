@@ -37,12 +37,11 @@ jobs:
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
 
-      - name: Prepare minimal environment
+      - name: Generate app key
         run: |
-          cp .env.example .env 2>/dev/null || true
-          if ! grep -q '^APP_KEY=' .env; then
-            php artisan key:generate --quiet
-          fi
+          APP_KEY=$(php -r 'echo "base64:".base64_encode(random_bytes(32));')
+          echo "APP_KEY=$APP_KEY" >> $GITHUB_ENV
+          echo "APP_ENV=testing" >> $GITHUB_ENV
 
       - name: Run security scan
-        run: php artisan secure:scan --fail-on=fail --error-exit-code=1
+        run: vendor/bin/testbench secure:scan --fail-on=fail --error-exit-code=1
